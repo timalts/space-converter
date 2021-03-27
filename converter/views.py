@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .forms import UserForm
+from .forms import ConvertForm
 
 
 def index(request):
     submitbutton= request.POST.get("submit")
     content = ''
-    form = UserForm(request.POST or None)
+    form = ConvertForm(request.POST or None)
 
     if form.is_valid():
         content = form.cleaned_data.get("content")
