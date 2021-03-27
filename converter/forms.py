@@ -1,4 +1,4 @@
 from django import forms
 
 class ConvertForm(forms.Form):
-    content = forms.CharField(max_length=1000000)
+    content = forms.CharField(widget=forms.Textarea(attrs={"rows":5, "cols":20})
