@@ -1,1 +1,1 @@
-web: gunicorn spaceconverter.wsgi:application --log-file -
+web: gunicorn spaceconverter.wsgi:application
