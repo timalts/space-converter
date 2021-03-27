@@ -19,4 +19,4 @@ def index(request):
     context= {'form': form, 'firstname': firstname, 'lastname':lastname,
               'submitbutton': submitbutton, 'emailvalue':emailvalue}
         
-    return render(request, 'UserInfo/index.html', context)
+    return render(request, 'index/index.html', context)
