@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from django.shortcuts import render
 from django.http import HttpResponse
-def student_show(request):
+def converter(request):
     x = []
     for i in range(10):
         x.append(i)
