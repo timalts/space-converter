@@ -1,11 +1,13 @@
-from django.shortcuts import render
-
-# Create your views here.
-
-from django.shortcuts import render
 from django.http import HttpResponse
-def converter(request):
-    x = []
-    for i in range(10):
-        x.append(i)
-    return HttpResponse("<h1>DataFlair Django Tutorials</h1>The Digits are {0}".format(x))
+from django.template import loader
+
+from .models import Question
+
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    template = loader.get_template('polls/index.html')
+    context = {
+        'latest_question_list': latest_question_list,
+    }
+    return HttpResponse(template.render(context, request))
