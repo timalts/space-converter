@@ -4,19 +4,14 @@ from .forms import UserForm
 
 def index(request):
     submitbutton= request.POST.get("submit")
+    content = ''
+    form = UserForm(request.POST or None)
 
-    firstname=''
-    lastname=''
-    emailvalue=''
-
-    form= UserForm(request.POST or None)
     if form.is_valid():
-        firstname= form.cleaned_data.get("first_name")
-        lastname= form.cleaned_data.get("last_name")
-        emailvalue= form.cleaned_data.get("email")
+        content = form.cleaned_data.get("content")
 
-
-    context= {'form': form, 'firstname': firstname, 'lastname':lastname,
-              'submitbutton': submitbutton, 'emailvalue':emailvalue}
+    context= {'form': form, 
+            'content': content,
+            'submitbutton': submitbutton,}
         
     return render(request, 'index/index.html', context)
