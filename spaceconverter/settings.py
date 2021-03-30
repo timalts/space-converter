@@ -21,6 +21,8 @@ STATIC_ROOT = (
 TEMPLATE_DIRS = (
     os.path.join(DIRNAME, 'templates/'),
 )
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(DIRNAME, "static"),)
 
 
 # Quick-start development settings - unsuitable for production
