@@ -11,6 +11,7 @@
 <form action="" method="POST">
 {% csrf_token %}
 <h1 class="m-4 title is-1 has-text-centered">Space Converter</h1>
+
 <div class="columns is-centered">
     <div class="column is-half">
         {{ form.as_p }}
@@ -25,6 +26,23 @@
     </div>
 </div>
 </form>
+<div class="dropdown is-active">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu5">
+      <span>Left aligned</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu5" role="menu">
+    <div class="dropdown-content">
+      <div class="dropdown-item">
+        <p>The dropdown is <strong>left-aligned</strong> by default.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
