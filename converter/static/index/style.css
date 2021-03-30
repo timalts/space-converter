@@ -8,3 +8,8 @@ textarea {
     background-color: #f8f8f8;
     resize: none;
   }
+
+  input[type=submit] {
+    border: 2px solid red;
+    border-radius: 4px;
+  }
