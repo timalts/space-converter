@@ -13,7 +13,7 @@ def index(request):
         final_result = ''
         for line in result:
             final_result += f"{line.strip()}\n"
-        result = final_result
+        result = repr(final_result)
 
     context= {'form': form, 
             'content': content,
