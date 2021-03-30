@@ -1,7 +1,7 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'index/style.css' %}">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 
 <head>
 <meta charset="UTF-8">
@@ -10,13 +10,23 @@
 <body>
 <form action="" method="POST">
 {% csrf_token %}
-{{ form.as_p }}
-<input type="Submit" name="submit" value="Submit"/>
+<h1 class="m-4 title is-1 has-text-centered">Space Converter</h1>
+<div class="columns is-centered">
+    <div class="column is-half">
+        {{ form.as_p }}
+    </div>
+    <div class="column is-half">
+        <textarea rows="10" column="40" class="textarea" readonly placeholder="Disabled">{% if submitbutton == "Submit" %} {{ result }} {% endif %}</textarea>
+    </div>
+</div>
+<div class="columns">
+    <div class="column has-text-centered">
+    <input class="button is-success" type="Submit" name="submit" value="Submit"/>
+    </div>
+</div>
 </form>
 
-{% if submitbutton == "Submit" %} 
-<h1> Result of parsing the input: {{ result }}</h1>
-{% endif %}
+
 
 </body>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
