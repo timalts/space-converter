@@ -10,6 +10,11 @@ def index(request):
     if form.is_valid():
         content = form.cleaned_data.get("content")
         result = content.split("\r")
+        final_result = ''
+        for line in result:
+            final_result += f"{line.strip()}\n"
+        result = final_result
+
     context= {'form': form, 
             'content': content,
             'submitbutton': submitbutton,
