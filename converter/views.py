@@ -9,7 +9,7 @@ def index(request):
     result = ''
     if form.is_valid():
         content = form.cleaned_data.get("content")
-        result = content.split(" ")
+        result = content.split("\r\")
     context= {'form': form, 
             'content': content,
             'submitbutton': submitbutton,
